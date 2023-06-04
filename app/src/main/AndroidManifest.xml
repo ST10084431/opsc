@@ -11,12 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NavDrawKotlin"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Edit_Task"
+            android:exported="false" />
         <activity
             android:name=".TimerCapture"
             android:exported="false" />
-
-
         <activity
             android:name=".Tasks"
             android:exported="false" />

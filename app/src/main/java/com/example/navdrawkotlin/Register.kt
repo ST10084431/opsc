@@ -62,5 +62,9 @@ class Register : AppCompatActivity() {
                     // Handle registration failure error
                 }
             }
+
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish() // Prevents user from going back to the registration activity
     }
 }
