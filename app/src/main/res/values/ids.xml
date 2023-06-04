@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="editTextTaskName" type="id">@+id/editTextTaskName</item>
+    <item name="editTextDueDate" type="id">@+id/editTextDueDate</item>
+    <item name="editTextTime" type="id">@+id/editTextTime</item>
+    <item name="editTextHoursWorked" type="id">@+id/editTextHoursWorked</item>
+    <item name="seekBarPriority" type="id">@+id/seekBarPriority</item>
+    <item name="editTextCategory" type="id">@+id/editTextCategory</item>
+    <item name="buttonSave" type="id">@+id/buttonSave</item>
+
+</resources>

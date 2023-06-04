@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "910418076684",
+    "project_id": "navdrawkotlin",
+    "storage_bucket": "navdrawkotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910418076684:android:f1a065566a9c600928ba29",
+        "android_client_info": {
+          "package_name": "com.example.navdrawkotlin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaYz6-0K4NeYT2EWXU4sj6pNvxrI_VBX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

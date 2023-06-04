@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <TextView
+
+        android:id="@+id/textView"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:fontFamily="casual"
+
+        android:text="@string/login"
+
+        android:textSize="30sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.529"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="0.098" />
+
+
+
+    <EditText
+
+        android:id="@+id/editTextTextEmailAddress"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:importantForAutofill="no"
+
+        android:inputType="textEmailAddress"
+
+        android:minHeight="48dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.497"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+
+        app:layout_constraintVertical_bias="0.16"
+
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+
+
+    <EditText
+
+        android:id="@+id/editTextTextPassword"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:importantForAutofill="no"
+
+        android:inputType="textPassword"
+
+        android:minHeight="48dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.497"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+
+        app:layout_constraintVertical_bias="0.153"
+
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+
+
+    <Button
+
+        android:id="@+id/button"
+
+        android:onClick="loginUser"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="80dp"
+
+        android:text="@string/Login"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+
+        app:layout_constraintVertical_bias="0.221" />
+
+
+
+    <Button
+
+        android:id="@+id/button2"
+
+        android:onClick="cancelFields"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="@string/cancel"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.395"
+
+        app:layout_constraintStart_toEndOf="@+id/button"
+
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+
+        app:layout_constraintVertical_bias="0.221" />
+
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="184dp"
+
+        android:layout_marginBottom="88dp"
+
+        android:onClick="regScreen"
+
+        android:text="register"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="1.0"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/button"
+
+        app:layout_constraintVertical_bias="0.641" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
