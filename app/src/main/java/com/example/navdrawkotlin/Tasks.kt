@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.navdrawkotlin.databinding.ActivityTasksBinding
@@ -34,11 +35,17 @@ class Tasks : AppCompatActivity() {
             showTimePickerDialog()
         }
 
+        binding.buttonStartDate.setOnClickListener {
+            showDatePickerDialog2()
+        }
+
         binding.buttonSave.setOnClickListener {
             val task = Task(
                 name = binding.editTextTaskName.text.toString(),
+                startDate= binding.buttonStartDate.text.toString(),
                 dueDate = binding.buttonDueDate.text.toString(),
                 time = binding.buttonTime.text.toString(),
+                hoursNeeded  =binding.editTextHoursNeeded.text.toString().toInt(),
                 hoursWorked = binding.editTextHoursWorked.text.toString().toInt(),
                 priority = binding.seekBarPriority.progress,
                 category = binding.editTextCategory.text.toString()
@@ -46,6 +53,21 @@ class Tasks : AppCompatActivity() {
 
             saveTask(task)
         }
+    }
+    private fun showDatePickerDialog2(){
+        val datePickerDialog = DatePickerDialog(this,
+            DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
+                calendar.set(year, month, dayOfMonth)
+                val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                val formattedDate = dateFormat.format(calendar.time)
+                binding.buttonStartDate.text = formattedDate
+
+            },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+        datePickerDialog.show()
     }
 
     private fun showDatePickerDialog() {

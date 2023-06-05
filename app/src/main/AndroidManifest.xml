@@ -16,6 +16,9 @@
         android:theme="@style/Theme.NavDrawKotlin"
         tools:targetApi="31">
         <activity
+            android:name=".goal"
+            android:exported="false" />
+        <activity
             android:name=".Calender"
             android:exported="false" />
         <activity

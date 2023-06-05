@@ -179,12 +179,23 @@ class HomeFragment : Fragment() {
             .addOnSuccessListener { querySnapshot ->
                 val tasks = querySnapshot.documents.mapNotNull { document ->
                     val taskName = document.getString("name") ?: ""
+                    val startDate = document.getString("startDate") ?: ""
                     val dueDate = document.getString("dueDate") ?: ""
                     val time = document.getString("time") ?: ""
+                    val hoursNeeded = document.getLong("hoursNeeded")?.toInt() ?: 0
                     val hoursWorked = document.getLong("hoursWorked")?.toInt() ?: 0
                     val priority = document.getLong("priority")?.toInt() ?: 0
                     val category = document.getString("category") ?: ""
-                    Task(taskName, dueDate, time, hoursWorked, priority, category)
+                    Task(
+                        taskName,
+                        startDate,
+                        dueDate,
+                        time,
+                        hoursNeeded,
+                        hoursWorked,
+                        priority,
+                        category
+                    )
                 }.sortedBy { it.dueDate } // Sort the tasks by due date
 
                 // Create an ArrayAdapter and set it as the adapter for the combo box
@@ -235,6 +246,9 @@ class HomeFragment : Fragment() {
             dueDateTextView.text = "Due Date: ${task.dueDate}"
             timeTextView.text = "Time: ${task.time}"
             priorityTextView.text = "Priority: ${task.priority}"
+            hoursNeededTextView.text = "Hours needed: ${task.hoursNeeded}"
+            startDateTextView.text ="Start Date: ${task.startDate}"
+            hoursRemaining.text ="Start Date: ${task.hoursNeeded - task.hoursWorked}"
         }
     }
 
@@ -347,7 +361,7 @@ class HomeFragment : Fragment() {
                 // Task deleted successfully
                 Toast.makeText(requireContext(), "Task deleted successfully", Toast.LENGTH_SHORT)
                     .show()
-                setTaskDetails(Task("", "", "", 0, 0, ""))
+                setTaskDetails(Task("", "","", "",0, 0, 0, ""))
                 fetchTaskNames(userEmail)
             }
             .addOnFailureListener { exception ->

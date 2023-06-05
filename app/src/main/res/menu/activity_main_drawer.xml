@@ -35,7 +35,12 @@
 
             android:title="@string/tasks" />
 
+        <item
+            android:id="@+id/nav_Goal"
 
+            android:icon="@drawable/task"
+
+            android:title="@string/Goal" />
 
         <item
 

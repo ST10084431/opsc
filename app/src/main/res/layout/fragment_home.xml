@@ -21,7 +21,8 @@
             android:id="@+id/taskSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,6 +45,19 @@
                 android:text="Hours Worked: Temp Name" />
 
             <TextView
+                android:id="@+id/hoursNeededTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Hours Needed: Temp Name" />
+
+            <TextView
+                android:id="@+id/hoursRemaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Hours Remaining: Temp Name" />
+            <TextView
                 android:id="@+id/categoryTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -56,6 +70,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Due Date: Temp Name" />
+            <TextView
+                android:id="@+id/startDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Start Date: Temp Name" />
 
             <TextView
                 android:id="@+id/timeTextView"

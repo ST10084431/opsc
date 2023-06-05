@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -47,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         emailTextView = navHeader.findViewById(R.id.TvEmail)
 
         firestore = FirebaseFirestore.getInstance()
-
 
 
         // Passing each menu ID as a set of Ids because each
@@ -96,6 +96,14 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_tasks -> {
                     if (isLoggedIn()) {
                         val intent = Intent(this@MainActivity, Tasks::class.java)
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(this@MainActivity, "Please log in to access tasks", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.nav_Goal -> {
+                    if (isLoggedIn()) {
+                        val intent = Intent(this@MainActivity, goal::class.java)
                         startActivity(intent)
                     } else {
                         Toast.makeText(this@MainActivity, "Please log in to access tasks", Toast.LENGTH_SHORT).show()

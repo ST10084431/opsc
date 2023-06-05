@@ -8,11 +8,11 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="353dp"
-        android:layout_height="359dp"
-        android:fontFamily="casual"
-        android:text="@string/get_the_best_swimming_workout_and_never_have_problems_with_figuring_out_how_to_swim_swimup_provides_personal_swimming_training_plans_created_just_for_you"
-        android:textSize="30sp"
+        android:layout_width="364dp"
+        android:layout_height="585dp"
+
+        android:text="@string/welcome_to_time_wize_the_ultimate_time_management_app_designed_to_help_you_optimize_your_workday_and_increase_your_productivity_we_understand_that_time_is_a_valuable_resource_and_our_app_is_here_to_empower_you_to_make_the_most_of_every_moment_with_a_range_of_innovative_features_such_as_task_lists_reminders_time_tracking_and_gamification_time_wize_motivates_you_to_stay_on_top_of_your_schedule_and_achieve_your_goals_like_never_before_our_simple_and_intuitive_user_interface_ensures_that_navigating_and_utilizing_all_the_app_s_features_is_a_breeze_whether_you_re_a_busy_professional_a_student_with_multiple_deadlines_or_someone_seeking_to_enhance_their_time_management_skills_time_wize_is_your_ultimate_companion_register_or_log_in_now_and_take_control_of_your_time_to_unlock_your_true_potential"
+        android:textSize="20sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

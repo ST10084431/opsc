@@ -6,167 +6,129 @@
     android:layout_height="match_parent"
     tools:context=".Login">
 
-    <TextView
-
-        android:id="@+id/textView"
-
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:fontFamily="casual"
-
-        android:text="@string/login"
-
-        android:textSize="30sp"
-
+    <LinearLayout
+        android:layout_width="337dp"
+        android:layout_height="458dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.529"
-
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        app:layout_constraintTop_toTopOf="parent"
+        <TextView
 
-        app:layout_constraintVertical_bias="0.098" />
+            android:id="@+id/textView"
 
+            android:layout_width="wrap_content"
 
+            android:layout_height="wrap_content"
 
-    <EditText
+            android:fontFamily="casual"
 
-        android:id="@+id/editTextTextEmailAddress"
+            android:text="@string/login"
 
-        android:layout_width="match_parent"
+            android:textSize="30sp"
 
-        android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
 
-        android:importantForAutofill="no"
+            app:layout_constraintEnd_toEndOf="parent"
 
-        android:inputType="textEmailAddress"
+            app:layout_constraintHorizontal_bias="0.529"
 
-        android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.098" />
 
-        app:layout_constraintHorizontal_bias="0.497"
 
-        app:layout_constraintStart_toStartOf="parent"
+        <EditText
 
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:id="@+id/editTextTextEmailAddress"
 
-        app:layout_constraintVertical_bias="0.16"
+            android:layout_width="match_parent"
 
-        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+            android:layout_height="wrap_content"
 
+            android:importantForAutofill="no"
 
+            android:inputType="textEmailAddress"
 
-    <EditText
+            android:minHeight="48dp"
 
-        android:id="@+id/editTextTextPassword"
+            app:layout_constraintBottom_toBottomOf="parent"
 
-        android:layout_width="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
 
-        android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_bias="0.497"
 
-        android:importantForAutofill="no"
+            app:layout_constraintStart_toStartOf="parent"
 
-        android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
 
-        android:minHeight="48dp"
+            app:layout_constraintVertical_bias="0.16"
 
-        app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
-        app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.497"
+        <EditText
 
-        app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/editTextTextPassword"
 
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+            android:layout_width="match_parent"
 
-        app:layout_constraintVertical_bias="0.153"
+            android:layout_height="wrap_content"
 
-        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+            android:importantForAutofill="no"
 
+            android:inputType="textPassword"
 
+            android:minHeight="48dp"
 
-    <Button
+            app:layout_constraintBottom_toBottomOf="parent"
 
-        android:id="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
 
-        android:onClick="loginUser"
+            app:layout_constraintHorizontal_bias="0.497"
 
-        android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
 
-        android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
 
-        android:layout_marginStart="80dp"
+            app:layout_constraintVertical_bias="0.153"
 
-        android:text="@string/Login"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
-        app:layout_constraintBottom_toBottomOf="parent"
 
-        app:layout_constraintStart_toStartOf="parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="loginUser"
+                android:text="@string/Login" />
 
-        app:layout_constraintVertical_bias="0.221" />
-
-
-
-    <Button
-
-        android:id="@+id/button2"
-
-        android:onClick="cancelFields"
-
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:text="@string/cancel"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.395"
-
-        app:layout_constraintStart_toEndOf="@+id/button"
-
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
-
-        app:layout_constraintVertical_bias="0.221" />
-
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:layout_marginEnd="184dp"
-
-        android:layout_marginBottom="88dp"
-
-        android:onClick="regScreen"
-
-        android:text="register"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="1.0"
-
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@+id/button"
-
-        app:layout_constraintVertical_bias="0.641" />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="cancelFields"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="regScreen"
+                android:text="register" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
