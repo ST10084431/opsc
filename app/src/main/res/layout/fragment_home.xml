@@ -100,8 +100,38 @@
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/chart"
             android:layout_width="match_parent"
-            android:layout_height="300dp" />
+            android:layout_height="241dp" />
 
+        <!-- Upcoming Task Section -->
+        <LinearLayout
+            android:id="@+id/upcomingTaskLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/upcomingTaskTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Upcoming Task" />
+
+            <TextView
+                android:id="@+id/upcomingTaskName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Name: Temp Name" />
+
+            <TextView
+                android:id="@+id/upcomingTaskDueDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Due Date: Temp Name" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
