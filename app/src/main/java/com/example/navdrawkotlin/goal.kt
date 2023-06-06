@@ -105,7 +105,7 @@ class goal : AppCompatActivity() {
                 .collection("tasks")
                 .document(selectedTask)
                 .collection("Goal")
-                .document()
+                .document("Goal :" + selectedTask )
 
             val goalsData = hashMapOf(
                 "minGoal" to minGoal,
@@ -124,6 +124,8 @@ class goal : AppCompatActivity() {
             // Handle invalid input or display an error message
             Log.e(TAG, "Invalid input for minimum or maximum goal")
         }
+
+        finish()
     }
 
 

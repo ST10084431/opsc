@@ -5,6 +5,12 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.NOTIFICATION" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -16,10 +22,13 @@
         android:theme="@style/Theme.NavDrawKotlin"
         tools:targetApi="31">
         <activity
-            android:name=".goal"
+            android:name=".Gallary"
             android:exported="false" />
         <activity
-            android:name=".Calender"
+            android:name=".Camera"
+            android:exported="false" />
+        <activity
+            android:name=".goal"
             android:exported="false" />
         <activity
             android:name=".Edit_Task"
@@ -35,9 +44,6 @@
             android:exported="false" />
         <activity
             android:name=".Login"
-            android:exported="false" />
-        <activity
-            android:name=".Camera"
             android:exported="false" />
         <activity
             android:name=".About"

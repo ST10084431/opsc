@@ -22,7 +22,7 @@ class Edit_Task : AppCompatActivity() {
     private lateinit var editTimeButton: Button
     private lateinit var editDateButton: Button
     private lateinit var saveButton: Button
-
+    private lateinit var buttonStartDate:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_task)
@@ -32,33 +32,47 @@ class Edit_Task : AppCompatActivity() {
         saveButton = findViewById(R.id.saveButton)
         val taskName = intent.getStringExtra("taskName")
         Log.d("EditTask", "Task Name: $taskName")
-        editTimeButton.setOnClickListener {
+
+
+        editDateButton.setOnClickListener {
+            showDatePickerDialog { selectedDate ->
+                // Use the selected date here
+                editDateButton.text = selectedDate
+            }
+        }
+
+         buttonStartDate = findViewById(R.id.buttonStartDate)
+
+        buttonStartDate.setOnClickListener {
+            showDatePickerDialog { selectedDate ->
+                // Use the selected date here
+                buttonStartDate.text = selectedDate
+            }
+        }
+        editTimeButton.setOnClickListener{
             showTimePickerDialog()
         }
 
-        editDateButton.setOnClickListener {
-            showDatePickerDialog()
-        }
+
+
+
+
         val nameEditText = findViewById<EditText>(R.id.editNameEditText)
         val hoursWorkedEditText = findViewById<EditText>(R.id.editHoursWorkedEditText)
         val categoryEditText = findViewById<EditText>(R.id.editCategoryEditText)
         val priorityEditText = findViewById<EditText>(R.id.editPriorityEditText)
-
+        val editTextHoursNeeded = findViewById<EditText>(R.id.editTextHoursNeeded)
         saveButton.setOnClickListener {
             val task = Task(
                 name = nameEditText.text.toString(),
                 dueDate =  editDateButton.text.toString(),
+                startDate = buttonStartDate.text.toString(),
                 time = editDateButton.text.toString(),
                 hoursWorked = hoursWorkedEditText.text.toString().toInt(),
                 priority = priorityEditText.text.toString().toInt(),
-                category = categoryEditText.text.toString()
+                category = categoryEditText.text.toString(),
+                hoursNeeded = editTextHoursNeeded.text.toString().toInt()
 
-                    // nameEditText.text = Editable.Factory.getInstance().newEditable(task.name)
-                //        hoursWorkedEditText.text = Editable.Factory.getInstance().newEditable(task.hoursWorked.toString())
-                //        categoryEditText.text = Editable.Factory.getInstance().newEditable(task.category)
-                //        priorityEditText.text = Editable.Factory.getInstance().newEditable(task.priority.toString())
-                //        editTimeButton.text =Editable.Factory.getInstance().newEditable(task.time)
-                //        editDateButton.text=Editable.Factory.getInstance().newEditable(task.dueDate)
             )
 
             saveTask(task)
@@ -72,14 +86,14 @@ class Edit_Task : AppCompatActivity() {
 
     }
 
-    private fun showDatePickerDialog() {
+    private fun showDatePickerDialog(onDateSelected: (String) -> Unit) {
         val datePickerDialog = DatePickerDialog(
             this,
             DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
                 calendar.set(year, month, dayOfMonth)
                 val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
                 val formattedDate = dateFormat.format(calendar.time)
-                editDateButton.text = formattedDate
+                onDateSelected(formattedDate) // Call the callback with the selected date
             },
             calendar.get(Calendar.YEAR),
             calendar.get(Calendar.MONTH),
@@ -124,15 +138,19 @@ class Edit_Task : AppCompatActivity() {
         val hoursWorkedEditText = findViewById<EditText>(R.id.editHoursWorkedEditText)
         val categoryEditText = findViewById<EditText>(R.id.editCategoryEditText)
         val priorityEditText = findViewById<EditText>(R.id.editPriorityEditText)
+        val startDateButton = findViewById<Button>(R.id.buttonStartDate)
+        val hoursNeededEditText = findViewById<EditText>(R.id.editTextHoursNeeded)
 
         nameEditText.text = Editable.Factory.getInstance().newEditable(task.name)
         hoursWorkedEditText.text = Editable.Factory.getInstance().newEditable(task.hoursWorked.toString())
         categoryEditText.text = Editable.Factory.getInstance().newEditable(task.category)
         priorityEditText.text = Editable.Factory.getInstance().newEditable(task.priority.toString())
+        startDateButton.text = Editable.Factory.getInstance().newEditable(task.startDate)
         editTimeButton.text =Editable.Factory.getInstance().newEditable(task.time)
         editDateButton.text=Editable.Factory.getInstance().newEditable(task.dueDate)
-
+        hoursNeededEditText.text = Editable.Factory.getInstance().newEditable(task.hoursNeeded.toString())
     }
+
 
     private fun saveTask(task: Task) {
         // Save the task to Firebase Firestore

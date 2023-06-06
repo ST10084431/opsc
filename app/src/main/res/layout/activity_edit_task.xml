@@ -12,11 +12,19 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
+
+
         <EditText
             android:id="@+id/editNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name" />
+        <EditText
+            android:id="@+id/editTextHoursNeeded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hours Needed"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/editHoursWorkedEditText"
@@ -31,7 +39,12 @@
             android:layout_height="wrap_content"
             android:hint="Category"
             android:minHeight="48dp" />
-
+        <Button
+            android:id="@+id/buttonStartDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Date"
+            android:minHeight="48dp" />
         <Button
             android:id="@+id/editDueDateButton"
             android:layout_width="match_parent"

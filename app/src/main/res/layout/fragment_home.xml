@@ -13,7 +13,6 @@
         android:orientation="vertical">
 
 
-
         <!-- Task Selection Combo Box -->
 
         <!-- Task Information Display -->
@@ -23,6 +22,11 @@
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             tools:ignore="SpeakableTextPresentCheck" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Hours Remaining: Temp Name" />
+
             <TextView
                 android:id="@+id/categoryTextView"
                 android:layout_width="wrap_content"
@@ -70,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Due Date: Temp Name" />
+
             <TextView
                 android:id="@+id/startDateTextView"
                 android:layout_width="wrap_content"
@@ -90,6 +96,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Priority: Temp Name" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -113,8 +124,6 @@
             </LinearLayout>
 
 
-
-
         </LinearLayout>
 
         <com.github.mikephil.charting.charts.LineChart
@@ -122,6 +131,10 @@
             android:layout_width="match_parent"
             android:layout_height="241dp" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black" />
         <!-- Upcoming Task Section -->
         <LinearLayout
             android:id="@+id/upcomingTaskLayout"

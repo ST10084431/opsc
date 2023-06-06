@@ -1,16 +1,11 @@
 package com.example.navdrawkotlin
 
 import android.content.Intent
-import android.content.res.Resources
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
-import android.widget.ArrayAdapter
-import android.widget.EditText
-import android.widget.Spinner
+import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -127,6 +122,14 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this@MainActivity, "Please log in to access the Logout", Toast.LENGTH_SHORT).show()
                     }
                 }
+                R.id.nav_gallery -> {
+                    if (isLoggedIn()) {
+                        val intent = Intent(this@MainActivity, Gallary::class.java)
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(this@MainActivity, "Please log in to access the timer", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
 
             true
@@ -169,7 +172,24 @@ class MainActivity : AppCompatActivity() {
 
         emailTextView.text = updatedEmail
     }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_refresh -> {
 
+                // Handle the refresh button click
+                restartApp()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun restartApp() {
+        val intent = Intent(applicationContext, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
+        finish()
+    }
 
 }
 

@@ -68,6 +68,31 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
+    fun refreshFragment() {
+        // Clear any existing data or UI elements
+        binding.apply {
+            nameTextView.text = ""
+            hoursWorkedTextView.text = ""
+            categoryTextView.text = ""
+            dueDateTextView.text = ""
+            timeTextView.text = ""
+            priorityTextView.text = ""
+            hoursNeededTextView.text = ""
+            startDateTextView.text = ""
+            hoursRemaining.text = ""
+            upcomingTaskName.text = ""
+            upcomingTaskDueDate.text = ""
+            lineChart.clear()
+        }
+        Log.d("test","refresh")
+        // Fetch task names and update UI
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        val userEmail = currentUser?.email
+
+        if (userEmail != null) {
+            fetchTaskNames(userEmail)
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -248,7 +273,7 @@ class HomeFragment : Fragment() {
             priorityTextView.text = "Priority: ${task.priority}"
             hoursNeededTextView.text = "Hours needed: ${task.hoursNeeded}"
             startDateTextView.text ="Start Date: ${task.startDate}"
-            hoursRemaining.text ="Start Date: ${task.hoursNeeded - task.hoursWorked}"
+            hoursRemaining.text ="Hours Remaing: ${task.hoursNeeded - task.hoursWorked}"
         }
     }
 
