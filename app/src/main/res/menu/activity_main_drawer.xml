@@ -38,7 +38,7 @@
         <item
             android:id="@+id/nav_Goal"
 
-            android:icon="@drawable/task"
+            android:icon="@drawable/flag"
 
             android:title="@string/Goal" />
 
@@ -61,7 +61,7 @@
 
             android:id="@+id/nav_gallery"
 
-            android:icon= "@drawable/ic_menu_camera"
+            android:icon= "@drawable/gallery"
 
             android:title="gallery"/>
         <item
